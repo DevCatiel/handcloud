@@ -1,0 +1,37 @@
+Project Title
+Exercise 1
+
+Getting Started
+Install Visual Studio Code and add the "Live Server" extension.
+
+Prerequisites
+The project only needs a web browser and a web server to be executed (Visual Studio Code is used only to deploy a local web server).
+
+Installing
+-Download the file.
+-Open the file in Visual Studio Code.
+-Go to the extensions section and search for "Live Server".
+-Do a right click on the file name in the Visual Studio Code explorer.
+-Select the "Open with "Live Server" option and a window of your browser will be open with the application running.
+
+Example
+Type elements separated with a comma or an "Enter" and they will be sorted in the specified order.
+
+Example
+Copy the next line and press the "Sort" button:
+
+Pedro, Peter, Juan, Jonny, Jose, Joseph, Carlos, Charlie, Antonio, Tony, Lucas, Luis, Maria, Mary, Guadalupe, Lupe
+
+The expected output to the previous input is:
+
+Antonio, Tony, Carlos, Charlie, Peter, Pedro, Guadalupe, Mary, Maria, Jonny, Jose, Joseph, Juan, Lupe, Luis, Lucas
+
+Built With
+HTML
+JavaScript
+
+Version
+1.0
+
+Author
+Hector Catiel
