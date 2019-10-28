@@ -1,0 +1,36 @@
+Project Title
+Exercise 1
+
+Getting Started
+Not needed
+
+Prerequisites
+The project only needs a web browse to be executed.
+
+Installing
+-Download the file.
+-Double click "index.html"
+-Select the browser of your preference in case of a prompt
+-Use the application.
+
+Example
+Type elements separated with a comma or an "Enter" and they will be sorted in the specified order.
+
+Example
+Copy the next line and press the "Sort" button:
+
+"Pedro, Peter, Juan, Jonny, Jose, Joseph, Carlos, Charlie, Antonio, Tony, Lucas, Luis, Maria, Mary, Guadalupe, Lupe"
+
+The expected output to the previous input is:
+
+"Antonio, Tony, Carlos, Charlie, Peter, Pedro, Guadalupe, Mary, Maria, Jonny, Jose, Joseph, Juan, Lupe, Luis, Lucas"
+
+Built With
+HTML
+JavaScript
+
+Version
+1.0
+
+Author
+Hector Catiel
