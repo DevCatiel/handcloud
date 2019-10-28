@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Excercise 1</title>
+    <script src="index.js"></script>
+</head>
+    <body>
+        <label for="stringToArray">Introduce the words to sort:</label>
+        <br>
+        <textarea id="stringToArray" cols="60" rows="22"></textarea>
+        <br>
+        <button id="buttonSort">Sort</button>
+        <br><br>
+        <ul id="result"></ul>
+        <p id="strRes"></p>
+        <script>
+            function sortArray() {
+                let arrayToSort = document.getElementById("stringToArray");
+                let arrayTemp = arrayToSort.value.split(',');
+                
+                if (arrayToSort.value.indexOf(",") < 0) {
+                    arrayTemp = arrayToSort.value.split('\n');
+                }
+
+                arrayTemp = arrayTemp.filter(v=>v!="");
+                
+                for (let i = 0; i < arrayTemp.length; i++) {
+                    arrayTemp[i] = { orig: arrayTemp[i].trim(), lowerStr: arrayTemp[i].trim().toLowerCase() };
+                }
+                
+                arrayTemp.sort(compare);
+                
+                let resArray = [];
+                let letter = "";
+                let letterTemp = "";
+                let letterFinal = "";
+                let letterFinalTemp = "";
+
+                let contArray = arrayTemp.length;
+                let iCont = 0;
+                let flag = false;
+
+                while (iCont < contArray) {
+                    letter = arrayTemp[iCont].lowerStr.substr(0, 1);
+                    flag = true;
+                    while (flag && iCont < contArray) {
+                        letterTemp = arrayTemp[iCont].lowerStr.substr(0, 1);
+
+                        if (letter == letterTemp) {
+                            resArray.push(arrayTemp[iCont].orig);
+                            iCont++;
+                        } else {
+                            flag = false;
+                        }
+                    }
+            
+            
+                    letterFinal = arrayTemp[contArray-1].lowerStr.substr(0, 1);
+                    flag = true;
+                    
+                    while (flag && iCont < contArray) {
+                        letterFinalTemp = arrayTemp[contArray-1].lowerStr.substr(0, 1);
+                        
+                        if (letterFinal == letterFinalTemp) {
+                            resArray.push(arrayTemp[contArray-1].orig);
+                            contArray--;
+                        } else {
+                            flag = false;
+                        }
+                    }
+                }
+                
+                console.log(resArray)
+                let result = document.getElementById("result");
+                result.innerHTML = '';
+
+                if (arrayToSort.value.indexOf(",") < 0) {
+                    resArray.forEach(function(element, index) {
+                        let result = document.getElementById("result");
+                        result.innerHTML += '<li>'+element+'</li>';
+                    })
+                    document.getElementById("strRes").innerHTML = "";
+                }
+                else {
+                    document.getElementById("strRes").innerHTML = resArray.join(", ");
+                }
+            }
+
+            let button = document.getElementById("buttonSort");
+            button.onclick = sortArray;
+
+            function compare (obj1, obj2){
+                const str1 = obj1.lowerStr;
+                const str2 = obj2.lowerStr;
+
+                if (str1 > str2) {
+                    return 1;
+                }
+                if (str1 < str2) {
+                    return -1;
+                }
+                return 0;
+            }
+        </script>
+    </body>
+</html>
